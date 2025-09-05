@@ -17,10 +17,25 @@
         <video class="v2" src="krish.mp4" autoplay muted></video>
     </div>
 
-    <div class="box1">
-        <h1 class="title">Krishna Janmashtami 2025</h1>
-        <button class="btn" onclick="playd()">Enter</button>
-    </div>
+<div class="box1">
+  <!-- Title -->
+  <h1 class="title">Krishna Janmashtami 2025</h1>
+
+  <!-- Sub-heading / Shloka -->
+  <p class="sub-text">“May the melody of Krishna’s flute bring peace and joy to your heart”</p>
+
+  <!-- Decorative Divider -->
+  <div class="divider">❀ ✿ ❀</div>
+
+  <!-- Short Greeting -->
+  <p class="greeting">
+    🌸 Celebrate the birth of Lord Krishna with devotion, dance, and delight 🌸
+  </p>
+
+  <!-- Enter Button -->
+  <button class="btn" onclick="playd()">Enter</button>
+</div>
+
     <div class="box">
         <div class="nav">
             <audio id="background-music" loop>
@@ -117,7 +132,8 @@
         </footer>
 
     </div>
-  <script>
+<script>
+    const btn = document.querySelector('.btn');
     const box1 = document.querySelector('.box1');
     const box = document.querySelector('.box');
     const videoContainer = document.querySelector('.vide-cont');
@@ -133,22 +149,34 @@
             music.play().catch(err => console.log("Autoplay blocked:", err));
         }, 100);
 
-        // Hide the intro box after a short delay
+        // Go fullscreen after 3 seconds
+        setTimeout(() => {
+            if (document.documentElement.requestFullscreen) {
+                document.documentElement.requestFullscreen();
+            } else if (document.documentElement.webkitRequestFullscreen) {
+                document.documentElement.webkitRequestFullscreen();
+            } else if (document.documentElement.msRequestFullscreen) {
+                document.documentElement.msRequestFullscreen();
+            }
+        }, 3000);
+
+        // Hide the intro box after 0.5s and show videos
         setTimeout(() => {
             box1.style.display = 'none';
             videoContainer.style.display = 'block';
-
-            // Play intro videos
-            v1.play()
-            v2.play()
+            v1.play();
+            v2.play();
         }, 500);
 
-        // After 3 seconds, hide intro videos and show the main content
+        // After 7.5s, hide intro videos and show main content
         setTimeout(() => {
             videoContainer.style.display = 'none';
             box.style.display = 'flex';
         }, 7500);
     }
+
+    // Attach click event ONCE
+    btn.addEventListener("click", playd);
 
     // Navigation toggle for mobile
     toggle.addEventListener("click", () => {
