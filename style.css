@@ -48,7 +48,7 @@ video {
     align-items: center;
     width: 100%;
     background-color: rgba(222, 221, 244, 0.516);
-    border-radius: 10px;
+    border-radius: 0x;
     animation: fadeIn 3s ease-in-out forwards;
     padding-top: 100px;
     overflow-x: hidden;
@@ -272,17 +272,55 @@ video {
 
 /* Mobile Styles */
 @media(max-width: 868px) {
-    .menu-toggle {
-        display: block;
-        color: #000;
-    }
+    /* Hamburger */
+.menu-toggle {
+  cursor: pointer;
+  width: 30px;
+  height: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 4px;
+  width: 100%;
+  background: #000; /* Change to white if needed */
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Animate to X */
+.menu-toggle.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Navigation hidden by default */
+#nav-links {
+  display: none;
+}
+
+/* Navigation visible */
+#nav-links.active {
+  display: block;
+}
+
 
     #nav-links {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 70px;
-        right: 30px;
+        top: 90px;
+        right: 0px;
         width: 200px;
         background: rgba(21, 8, 205, 0.503);
         padding: 15px 0;
@@ -294,8 +332,8 @@ video {
         display: flex;
     }
 
-    #nav-links li {
-        color: white;
+    #nav-links li a {
+        color: rgb(255, 213, 213);
     }
 
    .hedder{
@@ -386,9 +424,10 @@ footer {
     color: white;
     display: flex;
     padding: 20px;
-    background: rgb(116, 116, 242);
+    background: rgba(116, 116, 242, 0.877);
     width: 100%;
     justify-content: center;
     align-items: center;
     text-shadow: 0 0 20px rgb(255, 255, 255);
+
 }

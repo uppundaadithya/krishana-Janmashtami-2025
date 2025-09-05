@@ -57,14 +57,19 @@
 
                 </div>
             </div>
-            <div class="menu-toggle" id="menu-toggle">
-                ☰
-            </div>
-            <ul id="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li> <a href="http://apps.bbhegdecollege.com:5025/about">About</a></li>
-                <li><a href="http://apps.bbhegdecollege.com:5025/events">Events</a></li>
-            </ul>
+            
+        <div class="menu-toggle" id="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+<ul id="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="http://apps.bbhegdecollege.com:5025/about">About</a></li>
+    <li><a href="http://apps.bbhegdecollege.com:5025/events">Events</a></li>
+</ul>
+
         </div>
 
         <div id="home" class="t1">
@@ -179,9 +184,12 @@
     btn.addEventListener("click", playd);
 
     // Navigation toggle for mobile
-    toggle.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-    });
+ // Navigation toggle for mobile
+toggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active"); // show/hide menu
+    toggle.classList.toggle("open");     // animate hamburger ↔ X
+});
+
 </script>
 
 </body>
