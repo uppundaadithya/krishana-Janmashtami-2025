@@ -53,36 +53,51 @@ video {
     padding-top: 100px;
     overflow-x: hidden;
 }
+.box1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(222, 221, 244, 0);
+    border-radius: 10px;
+    animation: fadeIn 3s ease-in-out forwards;
+    overflow-x: hidden;
+}
 
 
 /* Intro Box */
-.box1 {
-  width: 100vw; height: 100vh;
-  background: linear-gradient(135deg, #ffe4f1, #fff6d6); /* Soft festive gradient */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  z-index: 1000;
-  padding: 20px;
-  animation: fadeIn 1.5s ease-in-out;
-  border: 1px solid #ff6ec7;
+.box2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;       /* centers horizontally */
+    justify-content: center;   /* centers vertically */
+    width: 90%;
+    min-height: 90%;         /* ensures full screen height */
+    background:linear-gradient(to bottom,rgb(110, 110, 255),rgb(255, 255, 134)); /* soft semi-transparent bg */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* subtle depth */
+    animation: fadeIn 3s ease-in-out forwards;
+    overflow-x: hidden;
+    padding: 20px;
+    text-align: center;
 }
-
 /* Title */
 .title {
   font-family: 'Great Vibes', cursive;
   font-size: 3.2rem;
-  color: #5a2a82;
+  color: #ffffff;
   margin: 10px 0;
-  text-shadow: 0 0 15px #ffd700, 0 0 30px #ff6ec7;
-  animation: glow 2s infinite alternate;
+  text-shadow: 0 0 50px #df25259d;
+  /* animation: glow 2s infinite alternate; */
+  text-align: center;
 }
 
 /* Sub Text / Shloka */
 .sub-text {
   font-size: 1.2rem;
+  font-style: italic;
   color: #444;
   margin-bottom: 15px;
 }
@@ -90,9 +105,10 @@ video {
 /* Decorative Divider */
 .divider {
   font-size: 1.5rem;
-  color: #ff6ec7;
+  color: #ffffff;
   margin: 10px 0;
   animation: pulse 2s infinite;
+    text-shadow: 0 0 10px #cbc1f4;
 }
 
 /* Greeting */
@@ -107,9 +123,9 @@ video {
 .btn {
   padding: 12px 30px;
   font-size: 1.2rem;
-  background: #ff9800;
+  background:linear-gradient(to right, #ff6ec7, #ffd700);
   color: white;
-  border: none;
+  border: 1px solid #d6d6d6;
   border-radius: 30px;
   cursor: pointer;
   box-shadow: 0 0 15px rgba(0,0,0,0.3);
