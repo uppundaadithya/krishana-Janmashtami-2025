@@ -17,7 +17,10 @@
         <video class="v2" src="krish.mp4" autoplay muted></video>
     </div>
 
-
+    <div class="box1">
+        <h1 class="title">Krishna Janmashtami 2025</h1>
+        <button class="btn" onclick="playd()">Enter</button>
+    </div>
     <div class="box">
         <div class="nav">
             <audio id="background-music" loop>
@@ -114,26 +117,44 @@
         </footer>
 
     </div>
-    <script>
-        const box = document.querySelector('.box');
-        const videoContainer = document.querySelector('.vide-cont');
-        const music = document.getElementById('background-music');
-        const toggle = document.getElementById("menu-toggle");
-        const navLinks = document.getElementById("nav-links");
+  <script>
+    const box1 = document.querySelector('.box1');
+    const box = document.querySelector('.box');
+    const videoContainer = document.querySelector('.vide-cont');
+    const v1 = document.querySelector('.v1');
+    const v2 = document.querySelector('.v2');
+    const music = document.getElementById('background-music');
+    const toggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    function playd() {
+        // Start music after user interaction (Enter button click)
         setTimeout(() => {
-            music.play()
-        }, 10);
-        
+            music.play().catch(err => console.log("Autoplay blocked:", err));
+        }, 100);
+
+        // Hide the intro box after a short delay
+        setTimeout(() => {
+            box1.style.display = 'none';
+            videoContainer.style.display = 'block';
+
+            // Play intro videos
+            v1.play()
+            v2.play()
+        }, 500);
+
+        // After 3 seconds, hide intro videos and show the main content
         setTimeout(() => {
             videoContainer.style.display = 'none';
             box.style.display = 'flex';
-        }, 7000);
+        }, 7500);
+    }
 
+    // Navigation toggle for mobile
+    toggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+    });
+</script>
 
-        
-        toggle.addEventListener("click", () => {
-            navLinks.classList.toggle("active");
-        }); 
-    </script>
 </body>
 </html> 
