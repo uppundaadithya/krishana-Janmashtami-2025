@@ -73,8 +73,8 @@ video {
     flex-direction: column;
     align-items: center;       /* centers horizontally */
     justify-content: center;   /* centers vertically */
-    width: 90%;
-    min-height: 90%;         /* ensures full screen height */
+    width: 70%;
+    min-height: 70%;         /* ensures full screen height */
     background:linear-gradient(to bottom,rgb(110, 110, 255),rgb(255, 255, 134)); /* soft semi-transparent bg */
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* subtle depth */
